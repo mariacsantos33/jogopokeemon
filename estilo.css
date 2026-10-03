@@ -1,0 +1,354 @@
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+body {
+
+    background-color: #e8e8e8;
+    min-height: 100vh;
+
+}
+
+h1 {
+
+    font-size: 45px;
+    color: cadetblue;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 25px;
+
+}
+
+#inicio {
+
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 35px;
+    text-align: center;
+    background-color: white;
+    border: 3px solid #222;
+    border-radius: 10px;
+
+}
+
+#inicio h2 {
+
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 20px;
+
+}
+
+#inicio p {
+
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+
+}
+
+button {
+
+    border: 2px solid #222;
+    border-radius: 8px;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: cadetblue;
+    color: white;
+
+}
+
+button:hover {
+
+    transform: scale(1.05);
+
+}
+
+#jogo {
+
+    width: 80%;
+    max-width: 1200px;
+    height: 450px;
+    margin: 0 auto;
+    border: 3px solid #222;
+    position: relative;
+    overflow: hidden;
+    background-image: url("../img/cenario.png");
+    background-position: 0px 0px;
+    background-repeat: repeat-x;
+    background-size: cover;
+
+}
+
+.escondido {
+
+    display: none !important;
+
+}
+
+.informacoes {
+
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 20;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+
+}
+
+.placar {
+
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+}
+
+.placar h2 {
+
+    min-width: 150px;
+    padding: 8px 12px;
+    background-color: white;
+    border: 2px solid #222;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #222;
+
+}
+
+.vidas {
+
+    display: flex;
+    gap: 5px;
+    padding: 7px 10px;
+    background-color: white;
+    border: 2px solid #222;
+    border-radius: 5px;
+
+}
+
+.vida {
+
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    transition: opacity 0.2s;
+
+}
+
+#personagem {
+
+    width: 153px;
+    height: 165px;
+    position: absolute;
+    left: 120px;
+    bottom: 70px;
+    z-index: 10;
+    background-image: url("../img/jogador.png");
+    background-size: 400% 200%;
+    background-repeat: no-repeat;
+    animation: correr 0.8s steps(1) infinite;
+
+}
+
+@keyframes correr {
+
+    0% {
+        background-position: 0% 0%;
+    }
+
+    12.5% {
+        background-position: 33.33% 0%;
+    }
+
+    25% {
+        background-position: 66.66% 0%;
+    }
+
+    37.5% {
+        background-position: 100% 0%;
+    }
+
+    50% {
+        background-position: 0% 100%;
+    }
+
+    62.5% {
+        background-position: 33.33% 100%;
+    }
+
+    75% {
+        background-position: 66.66% 100%;
+    }
+
+    87.5% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+
+}
+
+.inimigo {
+
+    width: 153px;
+    height: 165px;
+    position: absolute;
+    left: 900px;
+    bottom: 70px;
+    z-index: 9;
+    background-size: 400% 200%;
+    background-repeat: no-repeat;
+    animation: atacar 0.8s steps(1) infinite;
+
+}
+
+#vilao1 {
+
+    background-image: url("../img/vilao.png");
+
+}
+
+#vilao2 {
+
+    background-image: url("../img/vilao2.png");
+
+}
+
+@keyframes atacar {
+
+    0% {
+        background-position: 0% 0%;
+    }
+
+    12.5% {
+        background-position: 33.33% 0%;
+    }
+
+    25% {
+        background-position: 66.66% 0%;
+    }
+
+    37.5% {
+        background-position: 100% 0%;
+    }
+
+    50% {
+        background-position: 0% 100%;
+    }
+
+    62.5% {
+        background-position: 33.33% 100%;
+    }
+
+    75% {
+        background-position: 66.66% 100%;
+    }
+
+    87.5% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+
+}
+
+.pokebola-item {
+
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    position: absolute;
+    left: 1000px;
+    bottom: 140px;
+    z-index: 8;
+
+}
+
+.game-over {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 360px;
+    padding: 30px;
+    text-align: center;
+    background-color: white;
+    border: 3px solid #222;
+    border-radius: 10px;
+    z-index: 50;
+
+}
+
+.game-over h2 {
+
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #b22222;
+
+}
+
+.game-over p {
+
+    font-size: 20px;
+    margin-bottom: 20px;
+
+}
+
+@media (max-width: 800px) {
+
+    h1 {
+
+        font-size: 32px;
+
+    }
+
+    #jogo,
+    #inicio {
+
+        width: 95%;
+
+    }
+
+    .informacoes {
+
+        gap: 5px;
+
+    }
+
+    .placar h2 {
+
+        min-width: 120px;
+        font-size: 15px;
+
+    }
+
+    .vidas {
+
+        padding: 5px;
+
+    }
+
+    .vida {
+
+        width: 25px;
+        height: 25px;
+
+    }
+
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aventura Pokemon</title>
+
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+</head>
+
+<body>
+
+    <h1>Aventura Pokemon</h1>
+
+    <div id="inicio">
+
+        <h2>Prepare-se para a aventura!</h2>
+
+        <p>
+            Use as teclas A e D ou as setas para se movimentar.
+            <br>
+            Pressione ESPAÇO para pular.
+        </p>
+
+        <button id="botaoJogar">
+            JOGAR
+        </button>
+
+    </div>
+
+    <div id="jogo" class="escondido">
+
+        <div class="informacoes">
+
+            <div class="placar">
+
+                <h2>
+                    Pontos:
+                    <span id="pontos">0</span>
+                </h2>
+
+                <h2>
+                    Recorde:
+                    <span id="recorde">0</span>
+                </h2>
+
+            </div>
+
+            <div id="vidas" class="vidas">
+
+                <img
+                    id="vida1"
+                    class="pokebola vida"
+                    src="assets/img/pokebola.png"
+                    alt="Vida"
+                >
+
+                <img
+                    id="vida2"
+                    class="pokebola vida"
+                    src="assets/img/pokebola.png"
+                    alt="Vida"
+                >
+
+                <img
+                    id="vida3"
+                    class="pokebola vida"
+                    src="assets/img/pokebola.png"
+                    alt="Vida"
+                >
+
+            </div>
+
+        </div>
+
+        <div id="personagem"></div>
+
+        <div id="vilao1" class="inimigo"></div>
+
+        <div id="vilao2" class="inimigo escondido"></div>
+
+        <img
+            id="pokebola"
+            class="pokebola-item"
+            src="assets/img/pokebola.png"
+            alt="Pokébola"
+        >
+
+        <div id="gameOver" class="game-over escondido">
+
+            <h2>GAME OVER!</h2>
+
+            <p id="mensagemGameOver">
+                Você perdeu!
+            </p>
+
+            <button id="botaoReiniciar">
+                JOGAR NOVAMENTE
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="assets/js/jogo.js"></script>
+
+</body>
+
+</html>
